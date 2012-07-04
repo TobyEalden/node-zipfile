@@ -21,6 +21,7 @@ void ZipFile::Initialize(Handle<Object> target) {
     // functions
     NODE_SET_PROTOTYPE_METHOD(constructor, "readFileSync", readFileSync);
     NODE_SET_PROTOTYPE_METHOD(constructor, "readFile", readFile);
+    NODE_SET_PROTOTYPE_METHOD(constructor, "destroy", destroy);
 
     // properties
     constructor->InstanceTemplate()->SetAccessor(String::NewSymbol("count"), get_prop);
@@ -70,6 +71,12 @@ Handle<Value> ZipFile::New(const Arguments& args) {
     zip_close(za);
     zf->Wrap(args.This());
     return args.This();
+}
+
+Handle<Value> ZipFile::destroy(const Arguments& args) {
+  ZipFile* zf = ObjectWrap::Unwrap<ZipFile>(args.This());
+  // Do nothing.
+  return Undefined();
 }
 
 Handle<Value> ZipFile::get_prop(Local<String> property,

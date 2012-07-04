@@ -26,6 +26,7 @@ class ZipFile: public node::ObjectWrap {
     static void Initialize(Handle<Object> target);
     static Handle<Value> New(const Arguments &args);
 
+	static Handle<Value> destroy(const Arguments& args);
     static Handle<Value> get_prop(Local<String> property,
                                   const AccessorInfo& info);
 
