@@ -6,8 +6,8 @@
           "src/node_zipfile.cpp",
       ],
       'node_root': '/opt/node-v6.1',
-      'node_root_win': 'c:\\users\\toby\\dev\\node',
-      'deps_root_win': 'c:\\users\\toby\\dev'
+      'node_root_win': 'd:\\code\\webinos\\node',
+      'deps_root_win': 'd:\\code\\webinos'
   },
   'targets': [
     {
@@ -49,12 +49,12 @@
           ],
           'libraries': [ 
               'node.lib',
-              '<@(deps_root_win)\\node-zipfile\\deps\\libzip-0.10\\build_vc100\\lib\\Debug\\zip.lib',
+              '..\\deps\\libzip-0.10.1\\build\\lib\\Debug\\zip.lib',
 			  'zlib.lib'
           ],
           'include_dirs': [
              'include',
-             '<@(deps_root_win)\\node-zipfile\\deps\\libzip-0.10\\lib',
+             'deps\\libzip-0.10.1\\lib',
              '<@(deps_root_win)\\zlib',
              '<@(node_root_win)\\deps\\v8\\include',
              '<@(node_root_win)\\src',
@@ -68,7 +68,7 @@
               ],
               'AdditionalLibraryDirectories': [
                 '<@(deps_root_win)\\zlib',
-                '<@(deps_root_win)\\node-zipfile\\deps\\libzip-0.10\\build_vc100\\lib',
+                '<@(deps_root_win)\\node-zipfile\\deps\\libzip-0.10.1\\build\\lib',
                 '<@(node_root_win)\\Release\\lib',
                 '<@(node_root_win)\\Release',
               ],
